@@ -115,7 +115,7 @@ header {
     width: 30px;
     height: 30px;
     display: none;
-    background-image: url(/images/phone.png);
+    background-image: url(images/phone.png);
     background-repeat: no-repeat; }
   header .header__item_logo {
     flex-basis: 28%;
@@ -133,7 +133,7 @@ section {
 #banner {
   background: linear-gradient(to top, white 0, #fefefe 95%, #fbfbfb 99%, #fafafa 100%); }
   #banner .banner {
-    background-image: url(/images/bg1.png);
+    background-image: url(images/bg1.png);
     background-repeat: no-repeat;
     background-position: center top;
     padding: 330px 0 15px;
@@ -299,7 +299,7 @@ section {
     .results .results__discussion::before {
       display: block;
       content: " ";
-      background-image: url(/images/quates.jpg);
+      background-image: url(images/quates.jpg);
       background-position: top left;
       background-repeat: no-repeat;
       white-space: pre;
@@ -310,7 +310,7 @@ section {
       display: block;
       transform: rotate(180deg);
       content: " ";
-      background-image: url(/images/quates.jpg);
+      background-image: url(images/quates.jpg);
       background-position: top left;
       background-repeat: no-repeat;
       white-space: pre;
@@ -360,6 +360,9 @@ section {
     transition: width .5 s ease-in-out;
     left: 50%;
     bottom: -2px; }
+   .header__link:hover{
+	color: black;  
+  }
   .header__link:hover::before {
     width: 20px; }
   .header__link:hover::after {
@@ -438,7 +441,7 @@ section {
   h2 {
     font-size: 24px; }
   .navbar-toggler-icon {
-    background-image: url(/images/nav.png); }
+    background-image: url(images/nav.png); }
   #navbarHeader {
     width: 180px;
     position: absolute;
