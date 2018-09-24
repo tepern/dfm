@@ -11,8 +11,8 @@
 
 ## Installation
 
-* `git clone https://github.com/tepern/test-idem.git`
-* cd test-idem
+* `git clone https://github.com/tepern/test_pro100.git`
+* cd test_pro100
 * npm install
 * npm start
 * visit `http://localhost:8080/`

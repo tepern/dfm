@@ -65,11 +65,17 @@ h5
 a
 	text-decoration: none
 	cursor: pointer
+	&:hover
+		text-decoration: none
 	
 p
 	margin: 10px 0
 	font-size: 24px
-.banner
+	
+img
+	max-width: 100%
+	
+.banner, .results
 	p
 		.btn
 			background: linear-gradient(to top, #900f14 0%, #d0151c 50%, #e41620 100%)
@@ -80,6 +86,7 @@ p
 			max-width: 300px
 			color: white
 			border: none
+			box-shadow: none
 		
 header
 	background: white 
@@ -92,11 +99,10 @@ header
 	.header__item
 		padding: 25px 10px
 		text-align: center
-		flex-basis: 17%
+		position: relative
+		flex-basis: 18%
 		&:first-child
-			.header__link
-				text-transform: uppercase
-		&:nth-child(2)
+			flex-basis: 36%
 			.header__link
 				text-transform: uppercase
 		&:nth-child(3)
@@ -107,20 +113,28 @@ header
 				font-size: 18px
 	
 	.header__link
+		position: relative
 		img
 			width: 20px
 			height: auto
 			float: left
 		img, i
 			margin: 0 10px
+	.header__link_mobile
+		width: 30px
+		height: 30px
+		display: none
+		background-image: url('images/phone.png')
+		background-repeat: no-repeat	
 			
 	.header__item_logo
-		flex-basis: 32%
+		flex-basis: 28%
 		text-align: center
 		img
 			margin-bottom: -15%
 section
 	background: white
+	padding-bottom: 20px
 	> div
 		max-width: 1230px
 		margin: auto
@@ -200,6 +214,8 @@ section
 			p
 				text-align: center
 				font-size: 36px
+			ol
+				padding-left: 10px
 			li
 				list-style-position: inside
 				&:last-child
@@ -218,17 +234,40 @@ section
 			bottom: 0
 			text-align: center
 			width: 100%
+			line-height: 1
 			p
 				span
 					color: #bc141b
 				&::first-letter
 					font-size: 40px
+			.marathon__link
+				color: #be141b
+				display: none
 #carouselResults
 	padding-bottom: 50px
 	.carousel-indicators
 		bottom: 20px
+		li
+			width: 10px
+			height: 10px
+			border: 1px solid #be141b
+			border-radius: 50%
+			margin-left: 10px
+			margin-right: 10px
+			&::after
+				bottom: 50%
+				left: 100%
+				width: 290%
+				height: 1px
+				background: #be141b
+			&:last-child
+				&::after
+					display: none
+		.active
+			background: #be141b
 .results
 	margin-top: 50px
+	padding: 0 60px
 	.carouse-item.active
 		padding: 25px
 	.carousel-inner
@@ -248,6 +287,11 @@ section
 		text-align: left
 		&:first-child
 			text-indent: 10px
+	.results__btn
+		text-align: center
+		.btn		
+			padding: 10px 50px
+			border-radius: 0
 	.results__content
 		font-size: 18px
 	.results__discussion
@@ -294,4 +338,196 @@ section
 				margin: 5px 0
 			
 	.carousel-control-prev, .carousel-control-next
+		border-radius: 4px
+		width: 40px
+		i
+			border: 1px solid #be141b
+			color: #be141b
+			padding: 10px 12px
+			border-radius: 8px
+	.carousel-control-prev
+		margin-left: -60px
+		
+	.carousel-control-next
+		margin-right: -60px
+@media (min-width: 768px)
+	.header__link
+		&::before
+			display: block
+			position: absolute
+			content: ""
+			white-space: pre
+			height: 2px
+			width: 0
+			background-color: #be141b
+			transition: width .5 s ease-in-out
+			right: 50%
+			bottom: -2px
+		&::after
+			display: block
+			position: absolute
+			content: ""
+			white-space: pre
+			height: 2px
+			width: 0
+			background-color: #be141b
+			transition: width .5 s ease-in-out
+			left: 50%
+			bottom: -2px
+		&:hover
+			&::before
+				width: 20px
+			&::after
+				width: 20px
+		
+@media (max-width: 1169px)
+	a
+		font-size: 14px
+	header
+		.header__item
+			flex-basis: 20%
+			&:first-child
+				flex-basis: 40%
+		.header__item_logo
+			flex-basis: 20%			
+		
+@media (max-width: 991px)
+	a
+		font-size: 12px
+	p
+		font-size: 16px
+	h2
+		font-size: 35px
+	h3, h5
+		font-size: 16px
+	h4
+		font-size: 30px
+	header
+		.header__items
+			align-items: center
+		.header__item
+			padding: 5px
+			&:nth-child(3)
+				.header__link
+					font-size: 16px
+			&:nth-child(4)
+				.header__link
+					font-size: 12px	
+		.navbar
+			padding: 0 5px
+		.nav-item
+			margin-right: 10px
+		.header__link
+			img
+				margin: 0 5px
+				
+	.profile 
+		.profile__content 
+			li
+				font-size: 16px
+	
+	.plan-wrap 
+		.plan-wrap_main 
+			.plan__content
+				font-size: 16px
+				p
+					font-size: 22px
+					margin: 0
+		.plan__item
+			padding: 10px 0
+			.caption
+				p
+					font-size: 18px
+					margin: 5px 0
+					&::first-letter
+						font-size: 36px
+				.marathon__link
+					display: block
+					font-size: 16px
+					i
+						margin: 5px
+						vertical-align: -10%
+	.results
+		.carousel-item
+			text-align: center
+		.carousel-caption
+			position: relative
+			right: auto
+			width: 100%
+			p
+				&:first-child
+					font-size: 24px
+			
+		img
+			width: 100%
+			max-width: 60%
+@media (max-width: 767px)
+	h1
+		font-size: 29px
+	h2
+		font-size: 24px
+	.navbar-toggler-icon
+		background-image: url('images/nav.png')
+	#navbarHeader
+		width: 180px
+		position: absolute
+		top: 40px
+		text-align: left
+		background: white
+	.header__link_instagram
 		display: none
+	header
+		.header__link_mobile
+			display: block
+		.header__item
+			flex-basis: 14%
+			&:first-child
+				flex-basis: 28%
+		.header__item_logo
+			flex-basis: 44%
+	
+	.header__link.call
+		display: none
+	.profile
+		flex-wrap: wrap
+		.profile__photo
+			flex-basis: 100%
+			order: 1
+		.profile__content
+			flex-basis: 100%
+			padding: 20px
+	.icons
+		flex-wrap: wrap
+		.icons__item
+			flex-basis: 50%
+		p
+			margin: 0 10px 5px
+	.plan-wrap
+		flex-wrap: wrap
+		.plan-wrap_side
+			flex-basis: 100%
+			flex-wrap: nowrap
+		.plan__item
+			margin: 10px
+			&:last-child
+				margin: 10px
+		.plan-wrap_main
+			flex-basis: 100%
+	.results
+		margin-top: 20px
+		padding: 0 10px
+		img
+			max-width: 100%
+		.carouse-item
+			padding: 0
+		.results__discussion
+			padding: 15px
+			line-height: 1.5
+			text-align: center
+		.carousel-control-next
+			margin-right: 0
+		.carousel-control-prev
+			margin-left: 0
+		.carousel-control-next, .carousel-control-prev
+			top: auto
+			bottom: 20px
