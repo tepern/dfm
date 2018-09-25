@@ -1,18 +1,18 @@
 @font-face {
   font-family: 'NobelWGL-Light';
-  src: url("/fonts/nobelwgl/NobelWGL-Light.eot"), url("/fonts/nobelwgl/NobelWGL-Light.woff") format("woff"), url("/fonts/nobelwgl/NobelWGL-light.ttf") format("truetype");
+  src: url("fonts/nobelwgl/NobelWGL-Light.eot"), url("fonts/nobelwgl/NobelWGL-Light.woff") format("woff"), url("fonts/nobelwgl/NobelWGL-light.ttf") format("truetype");
   font-style: normal;
     font-style-font-weight: normal; }
 
 @font-face {
   font-family: 'NobelWGL-Book';
-  src: url("/fonts/nobelwgl/NobelWGL-Book.eot?"), url("/fonts/nobelwgl/NobelWGL-Book.woff") format("woff"), url("/fonts/nobelwgl/NobelWGL-Book.ttf") format("truetype");
+  src: url("fonts/nobelwgl/NobelWGL-Book.eot?"), url("fonts/nobelwgl/NobelWGL-Book.woff") format("woff"), url("fonts/nobelwgl/NobelWGL-Book.ttf") format("truetype");
   font-style: normal;
     font-style-font-weight: normal; }
 
 @font-face {
   font-family: 'NobelWGL-Bold';
-  src: url("/fonts/nobelwgl/NobelWGL-Bold.eot"), url("/fonts/nobelwgl/NobelWGL-Bold.woff") format("woff"), url("/fonts/nobelwgl/NobelWGL-Bold.ttf") format("truetype");
+  src: url("fonts/nobelwgl/NobelWGL-Bold.eot"), url("fonts/nobelwgl/NobelWGL-Bold.woff") format("woff"), url("fonts/nobelwgl/NobelWGL-Bold.ttf") format("truetype");
   font-style: normal;
     font-style-font-weight: normal; }
 
@@ -195,7 +195,10 @@ section {
       font-family: NobelWGL-Light;
       font-size: 24px;
       position: relative;
-      padding: 30px 20px; }
+      padding: 30px 20px;
+      display: none; }
+      .plan-wrap .plan-wrap_main .plan__content.active {
+        display: block; }
       .plan-wrap .plan-wrap_main .plan__content .close {
         position: absolute;
         top: 35px;
@@ -219,6 +222,8 @@ section {
     box-shadow: 5px 5px 10px #dedede, -3px -3px 5px #f7f7f7; }
     .plan-wrap .plan__item:last-child {
       margin: 0 20px; }
+    .plan-wrap .plan__item.active {
+      box-shadow: 5px 5px 10px #d15f63, -3px -3px 5px #d15f63; }
     .plan-wrap .plan__item .caption {
       position: absolute;
       bottom: 0;
@@ -337,6 +342,24 @@ section {
   .results .carousel-control-next {
     margin-right: -60px; }
 
+@media (min-width: 992px) {
+  .plan-wrap .plan__item:hover {
+    opacity: 0.5; }
+    .plan-wrap .plan__item:hover .caption .marathon__link {
+      display: block;
+      color: black;
+      border: 2px solid #b21319;
+      position: absolute;
+      top: -50%;
+      padding: 5px;
+      background: white;
+      left: 10px;
+      right: 30px;
+      font-size: 20px; }
+      .plan-wrap .plan__item:hover .caption .marathon__link i {
+        margin: 5px;
+        vertical-align: -10%; } }
+
 @media (min-width: 768px) {
   .header__link::before {
     display: block;
@@ -360,13 +383,12 @@ section {
     transition: width .5 s ease-in-out;
     left: 50%;
     bottom: -2px; }
-   .header__link:hover{
-	color: black;  
-  }
-  .header__link:hover::before {
-    width: 20px; }
-  .header__link:hover::after {
-    width: 20px; } }
+  .header__link:hover {
+    color: black; }
+    .header__link:hover::before {
+      width: 20px; }
+    .header__link:hover::after {
+      width: 20px; } }
 
 @media (max-width: 1169px) {
   a {
@@ -478,7 +500,8 @@ section {
     flex-wrap: wrap; }
     .plan-wrap .plan-wrap_side {
       flex-basis: 100%;
-      flex-wrap: nowrap; }
+      flex-wrap: nowrap;
+      justify-content: space-between; }
     .plan-wrap .plan__item {
       margin: 10px; }
       .plan-wrap .plan__item:last-child {

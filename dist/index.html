@@ -8,7 +8,7 @@
 		<link rel='stylesheet' href='style.css'>
 		<link href ="https://fonts.googleapis.com/css?family=Lora:400,400i&amp" rel="stylesheet">
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
@@ -103,29 +103,29 @@
 				<h2>План марафона</h2>
 				<div class="plan-wrap">
 					<div class="plan-wrap_side">
-						<div class="plan__item">
+						<div class="plan__item active" id="1week_item">
 							<img src="images/1_week.jpg">
 							<div class="caption">
 								<p><span>1-я</span>
 									неделя</br>Шея и осанка
-									<a class="marathon__link">подробнее<i class="fa fa-chevron-right" aria-hidden="true"></i>
+									<a class="marathon__link" id="1week_open">подробнее<i class="fa fa-chevron-right" aria-hidden="true"></i>
 									</a>
 								</p>
 							</div>
 						</div>
-						<div class="plan__item">
+						<div class="plan__item" id="2week_item">
 							<img src="images/2_week.jpg">
 							<div class="caption">
 								<p><span>2-я</span>
 									неделя</br>Верхняя часть лица
-									<a class="marathon__link">подробнее<i class="fa fa-chevron-right" aria-hidden="true"></i>
+									<a class="marathon__link" id="2week_open">подробнее<i class="fa fa-chevron-right" aria-hidden="true"></i>
 									</a>
 								</p>
 							</div>
 						</div>
 					</div>
 					<div class="plan-wrap_main">
-						<div class="plan__content">
+						<div class="plan__content active" id="1week">
 							<p>1-я неделя</p>
 							<a class="close"><img src="images/cancel.svg"></a>
 							<h4>Шея и осанка</h4>
@@ -140,24 +140,69 @@
 								<li>Сопровождение группы + ответы на вопросы.</li>
 							</ol>
 						</div>
+						<div class="plan__content" id="2week">
+							<p>2-я неделя</p>
+							<a class="close"><img src="images/cancel.svg"></a>
+							<h4>Верхняя часть лица</h4>
+							<ol>
+								<li>Организационные моменты. Знакомство.</li>
+								<li>Онлайн встреча 1-ой недели, в 20.00 по мск времени (понедельник).</li>
+								<li>Утренний комплекс "Будильник".</li>
+								<li>Режим дня, питания, сон и вода.</li>
+								<li>Рекомендации по очистке лимфатической системы.</li>
+								<li>Комплекс приемов на шею.</li>
+								<li>Комплекс приемов на осанку.</li>
+								<li>Сопровождение группы + ответы на вопросы.</li>
+							</ol>
+						</div>
+						<div class="plan__content" id="3week">
+							<p>3-я неделя</p>
+							<a class="close"><img src="images/cancel.svg"></a>
+							<h4>Средняя часть лица</h4>
+							<ol>
+								<li>Организационные моменты. Знакомство.</li>
+								<li>Онлайн встреча 1-ой недели, в 20.00 по мск времени (понедельник).</li>
+								<li>Утренний комплекс "Будильник".</li>
+								<li>Режим дня, питания, сон и вода.</li>
+								<li>Рекомендации по очистке лимфатической системы.</li>
+								<li>Комплекс приемов на шею.</li>
+								<li>Комплекс приемов на осанку.</li>
+								<li>Сопровождение группы + ответы на вопросы.</li>
+							</ol>
+						</div>
+						<div class="plan__content" id="4week">
+							<p>4-я неделя</p>
+							<a class="close"><img src="images/cancel.svg"></a>
+							<h4>Нижняя часть лица</h4>
+							<ol>
+								<li>Организационные моменты. Знакомство.</li>
+								<li>Онлайн встреча 1-ой недели, в 20.00 по мск времени (понедельник).</li>
+								<li>Утренний комплекс "Будильник".</li>
+								<li>Режим дня, питания, сон и вода.</li>
+								<li>Рекомендации по очистке лимфатической системы.</li>
+								<li>Комплекс приемов на шею.</li>
+								<li>Комплекс приемов на осанку.</li>
+								<li>Сопровождение группы + ответы на вопросы.</li>
+							</ol>
+						</div>
 					</div>
 					<div class="plan-wrap_side">
-						<div class="plan__item">
+						<div class="plan__item" id="3week_item">
 							<img src="images/3_week.jpg">
 							<div class="caption">
 								<p><span>3-я</span>
 									неделя</br>Средняя часть лица
-									<a class="marathon__link">подробнее<i class="fa fa-chevron-right" aria-hidden="true"></i>
+									<a class="marathon__link" id="3week_open">подробнее<i class="fa fa-chevron-right" aria-hidden="true"></i>
 									</a>
 								</p>
 							</div>
 						</div>
-						<div class="plan__item">
+						<div class="plan__item" id="4week_item">
 							<img src="images/4_week.jpg">
 							<div class="caption">
 								<p><span>4-я</span>
 									неделя</br>Нижняя часть лица
-									<a class="marathon__link">подробнее<i class="fa fa-chevron-right" aria-hidden="true"></i>
+									<a class="marathon__link" id="4week_open">подробнее<i class="fa fa-chevron-right" aria-hidden="true"></i>
 									</a>
 								</p>
 							</div>
@@ -203,6 +248,6 @@
 		</section>
 		<footer></footer>
 		<div id="app"></div>
-		<script src="/bundle.js"></script>
+		<script src="bundle.js"></script>
 	</body>
 </html>
