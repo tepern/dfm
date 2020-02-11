@@ -11,6 +11,7 @@
 
 ## Installation
 
+* git clone https://github.com/tepern/dfm.git
 * npm install
 * npm start
 * visit `http://localhost:8080/`
