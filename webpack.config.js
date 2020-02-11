@@ -1,14 +1,22 @@
 const path = require('path')
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+//const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const devMode = process.env.NODE_ENV !== 'production';
+
+const PATHS = {
+  src: path.resolve(__dirname, './src'),
+  dist: path.resolve(__dirname, './dist'),
+}
 
 module.exports = {
   entry: './src/index.js',
   devtool: 'inline-source-map',
+  mode: 'development',
   devServer: {
 	hot: true,
 	open: true,
-	inline: true	
+	inline: true,	
   },
   module: {
     rules: [
@@ -17,34 +25,34 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader']
       },
-	  {
-        test: /\.scss$/,
-		use: ExtractTextPlugin.extract({
-			fallback: 'style-loader',
-			use: ['css-loader','sass-loader']
-		})
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: process.env.NODE_ENV === 'development',
+              reloadAll: true,
+            },
+          },
+          'css-loader',
+          'sass-loader',
+        ],
       },
+	  /*{
+      test: /\.s[ac]ss$/i,
+		  use: ['style-loader',
+			 'css-loader',
+       'sass-loader']
+      },*/
 	  {
-        test: /\.sass$/,
-		use: ExtractTextPlugin.extract({
-			fallback: 'style-loader',
-			use: ['css-loader','sass-loader']
-		})
-      },
-	  {
-		test: /\.(jpg|png|gif|svg)$/, 
-		loader: 'file-loader',
-		options: {
-			name: 'images/[name].[ext]'
-		},
+		  test: /\.(jpg|png|gif|svg)$/, 
+		  loader: 'file-loader',
+		  options: {
+			  name: '[path]/[name].[ext]',
+        publicPath: './',
+		  },
 	  },
-	  {
-		test: /\.(eot|ttf|woff|woff2)$/, 
-		loader: 'file-loader',
-		options: {
-			name: 'fonts/nobelwgl/[name].[ext]'
-		},
-	  }
     ]
   },
   resolve: {
@@ -57,7 +65,8 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-	new ExtractTextPlugin('style.css'),
+    //new ExtractTextPlugin('style.css'),
+    new MiniCssExtractPlugin({filename: 'main.css'}),
   ],
   devServer: {
     contentBase: './dist',
